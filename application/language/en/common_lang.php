@@ -61,3 +61,4 @@ $lang["common_export_excel_yes"] = "Yes";
 $lang["common_export_excel_no"] = "No";
 $lang["common_required"] = "Required";
 $lang["common_id"] = "Id";
+$lang["common_quantity_to_transer"] = "Quantity to Transfer";

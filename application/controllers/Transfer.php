@@ -17,5 +17,18 @@ class Transfer extends Secure_Controller
 		$this->load->view('transfer/transfer',$data);
 	}
 	
+	public function item_search()
+	{
+		$suggestions = $this->Item->get_search_suggestions($this->input->get('term'), array('search_custom' => FALSE, 'is_deleted' => FALSE), TRUE);
+		$suggestions = array_merge($suggestions, $this->Item_kit->get_search_suggestions($this->input->get('term')));
+
+		$suggestions = $this->xss_clean($suggestions);
+
+		echo json_encode($suggestions);
+	}
+
+	public function get_item_id(){
+		echo json_encode($this->Transfer_model->get_item($this->input->post('item_id'),$this->input->post('location_id')));
+	}
 }
 ?>
