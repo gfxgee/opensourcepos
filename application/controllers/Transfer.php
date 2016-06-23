@@ -30,5 +30,49 @@ class Transfer extends Secure_Controller
 	public function get_item_id(){
 		echo json_encode($this->Transfer_model->get_item($this->input->post('item_id'),$this->input->post('location_id')));
 	}
+
+	public function save($id = -1){
+		$item_id = $this->input->post('item_id');
+		$item_qtf = $this->input->post('item_quantity_to_transfer');
+		$item_quantity = $this->input->post('item_quantity');
+		$from_location = $this->input->post('from_location');
+		$to_location = $this->input->post('to_location');
+		$qty_hidden = $this->input->post('qty_hidden');
+		$qty_hidden_2 = $this->input->post('qty_hidden_2');
+		$data = array();
+		$data = [
+			'item_quantity'	=>	$item_quantity,
+			'item_qtf'	=>	$item_qtf,
+			'item_id'	=>	$item_id,
+			'from_location'	=>	$from_location,
+			'to_location'	=>	$to_location,
+			'qty_hidden'	=>	$qty_hidden,
+			'qty_hidden_2'	=>	$qty_hidden_2,
+		];
+
+		$q = $this->Transfer_model->insert_transer_item($data);
+		if($q){
+			$inv_data = array(
+            'trans_date' => date('Y-m-d H:i:s'),
+            'trans_items' => $item_id,
+            'trans_user' => $this->Employee->get_logged_in_employee_info()->person_id,
+            'trans_location' => $from_location,
+            'trans_comment' => "Transfer Item Location",
+            'trans_inventory' => '-'.$item_qtf);
+
+        	$this->Inventory->insert($inv_data);
+
+        	$inv_data2 = array(
+            'trans_date' => date('Y-m-d H:i:s'),
+            'trans_items' => $item_id,
+            'trans_user' => $this->Employee->get_logged_in_employee_info()->person_id,
+            'trans_location' => $to_location,
+            'trans_comment' => "Transfer Item Location",
+            'trans_inventory' => $item_qtf);
+        	
+        	$z = $this->Inventory->insert($inv_data2);
+		}
+		 
+	}
 }
 ?>

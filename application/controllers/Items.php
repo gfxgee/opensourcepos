@@ -398,7 +398,7 @@ class Items extends Secure_Controller
 	                    'trans_inventory' => $updated_quantity - $item_quantity->quantity
 	                );
 
-	                $success &= $this->Inventory->insert($inv_data);       
+	                $success &= $this->Inventory->insert($inv_data);  
                 }                                            
             }
 
