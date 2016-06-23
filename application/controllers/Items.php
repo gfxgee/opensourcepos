@@ -467,7 +467,7 @@ class Items extends Secure_Controller
 			'trans_items' => $item_id,
 			'trans_user' => $employee_id,
 			'trans_location' => $location_id,
-			'trans_comment' => $this->input->post('trans_comment'),
+			'trans_comment' => 'ADJUSTMENT: '.$this->input->post('trans_comment'),
 			'trans_inventory' => $this->input->post('newquantity')
 		);
 		

@@ -81,7 +81,7 @@
 		</div>
 
 		<div class="form-group form-group-sm">
-			<?php echo form_label($this->lang->line('items_inventory_comments'), 'description', array('class'=>'control-label col-xs-3')); ?>
+			<?php echo form_label('Adjustment '.$this->lang->line('items_inventory_comments'), 'description', array('class'=>'control-label col-xs-3')); ?>
 			<div class='col-xs-8'>
 				<?php echo form_textarea(array(
 						'name'=>'trans_comment',
