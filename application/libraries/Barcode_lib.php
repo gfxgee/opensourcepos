@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 use emberlabs\Barcode\BarcodeBase;
 require APPPATH.'/views/barcodes/BarcodeBase.php';
@@ -9,10 +9,10 @@ require APPPATH.'/views/barcodes/Ean8.php';
 
 class Barcode_lib
 {
-	private $CI = null;
+	private $CI;
 	private $supported_barcodes = array('Code39' => 'Code 39', 'Code128' => 'Code 128', 'Ean8' => 'EAN 8', 'Ean13' => 'EAN 13');
 	
-	function __construct()
+	public function __construct()
 	{
 		$this->CI =& get_instance();
 	}
@@ -229,4 +229,5 @@ class Barcode_lib
 		return substr($font_file_name, 0, -4);
 	}
 }
+
 ?>

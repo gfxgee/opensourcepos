@@ -1,17 +1,28 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
  
-class Sms
+class Sms_lib
 {
-	/*
-	 * SMS send function
-	 * Example of use: $response = sendSMS('myUsername', 'myPassword', '4477777777', 'My test message', 'My company');
-	 */
-	function sendSMS($username, $password, $phone, $message, $originator)
+	private $CI;
+
+  	public function __construct()
 	{
+		$this->CI =& get_instance();
+	}
+	
+	/*
+	 * SMS sending function
+	 * Example of use: $response = sendSMS('4477777777', 'My test message');
+	 */
+	public function sendSMS($phone, $message)
+	{
+		$username   = $this->CI->config->item('msg_uid');
+		$password   = $this->CI->config->item('msg_pwd');
+		$originator = $this->CI->config->item('msg_src');
+		
 		$response = FALSE;
 		
 		// if any of the parameters is empty return with a FALSE
-		if( empty($username) || empty($password) || empty($phone) || empty($message) || empty($originator) )
+		if(empty($username) || empty($password) || empty($phone) || empty($message) || empty($originator))
 		{
 			//echo $username . ' ' . $password . ' ' . $phone . ' ' . $message . ' ' . $originator;
 		}
