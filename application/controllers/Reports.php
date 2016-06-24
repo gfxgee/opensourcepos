@@ -30,7 +30,6 @@ class Reports extends Secure_Controller
 	public function index()
 	{
 		$data['grants'] = $this->xss_clean($this->Employee->get_employee_grants($this->session->userdata('person_id')));
-		
 		$this->load->view("reports/listing", $data);
 	}
 

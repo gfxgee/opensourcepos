@@ -43,7 +43,7 @@ function show_report($report_prefix, $report_name, $lang_key='')
 	if (!empty($report_label) && $report_label != $lang_key .  ' (TBD)')
 	{
 		?>
-			<li><a href="<?php echo site_url('reports/' . $report_prefix . preg_replace('/reports_(.*)/', '$1', $report_name));?>"><?php echo $report_label; ?></a></li>
+			<a class="list-group-item" href="<?php echo site_url('reports/' . $report_prefix . preg_replace('/reports_(.*)/', '$1', $report_name));?>"><?php echo $report_label; ?></a>
 		<?php 
 	}
 }
