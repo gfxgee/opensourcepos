@@ -90,6 +90,7 @@ class Items extends Secure_Controller
  				$this->image_lib->initialize($config);
  				$image = $this->image_lib->resize();
 				$thumb_path = $this->image_lib->full_dst_path;
+				chmod($thumb_path,0777);
 			}
 			$this->output->set_content_type(get_mime_by_extension($thumb_path));
 			$this->output->set_output(file_get_contents($thumb_path));
@@ -438,11 +439,12 @@ class Items extends Secure_Controller
 		// load upload library
 		$config = array('upload_path' => './uploads/item_pics/',
 			'allowed_types' => 'gif|jpg|png',
-			'max_size' => '100',
-			'max_width' => '640',
-			'max_height' => '480',
+			'max_size' => '900',
+			'max_width' => '0',
+			'max_height' => '0',
 			'file_name' => sizeof($map) + 1
 		);
+		chmod($config['upload_path'],0777);
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('item_image');           
 		

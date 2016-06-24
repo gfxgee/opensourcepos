@@ -2,7 +2,7 @@
 	</div>
 
 	<div id="footer">
-		<div class="jumbotron push-spaces">
+		<div class="jumbotron push-spaces hide">
 			<?php echo $this->lang->line('common_you_are_using_ospos'); ?>
 			<?php echo $this->config->item('application_version'); ?>.
 			<?php echo $this->lang->line('common_please_visit_my'); ?>

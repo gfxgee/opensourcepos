@@ -332,19 +332,26 @@
 				$(form).ajaxSubmit({
 					success: function(response) {
 						var stay_open = dialog_support.clicked_id() != 'submit';
-						if (stay_open)
-						{
-							// set action of item_form to url without item id, so a new one can be created
-							$("#item_form").attr("action", "<?php echo site_url("items/save/")?>");
-							// use a whitelist of fields to minimize unintended side effects
-							$(':text, :password, :file, #description, #item_form').not('.quantity, #reorder_level, #tax_name_1,' +
-								'#tax_percent_name_1, #reference_number, #name, #cost_price, #unit_price, #taxed_cost_price, #taxed_unit_price').val('');
-							// de-select any checkboxes, radios and drop-down menus
-							$(':input', '#item_form').not('#item_category_id').removeAttr('checked').removeAttr('selected');
-						}
-						else
-						{
-							dialog_support.hide();
+						if(response.success == false){
+							$('#error_message_box').show();
+							$('#error_message_box').html(response.message);
+							$('#error_message_box').trigger('focus');
+							console.log('test');
+						}else{
+							if (stay_open)
+							{
+								// set action of item_form to url without item id, so a new one can be created
+								$("#item_form").attr("action", "<?php echo site_url("items/save/")?>");
+								// use a whitelist of fields to minimize unintended side effects
+								$(':text, :password, :file, #description, #item_form').not('.quantity, #reorder_level, #tax_name_1,' +
+									'#tax_percent_name_1, #reference_number, #name, #cost_price, #unit_price, #taxed_cost_price, #taxed_unit_price').val('');
+								// de-select any checkboxes, radios and drop-down menus
+								$(':input', '#item_form').not('#item_category_id').removeAttr('checked').removeAttr('selected');
+							}
+							else
+							{
+								dialog_support.hide();
+							}
 						}
 						table_support.handle_submit('<?php echo site_url('items'); ?>', response, stay_open);
 					},
