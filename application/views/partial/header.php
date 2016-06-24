@@ -3,8 +3,8 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<base href="<?php echo base_url();?>" />
-	<title><?php echo $this->config->item('company').' -- '.$this->lang->line('common_powered_by').' OS Point Of Sale' ?></title>
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<title><?php echo $this->config->item('company').' | '.(empty($controller_name) ? 'Home' : $controller_name); ?></title>
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
 	<?php if ($this->input->cookie('debug') == "true" || $this->input->get("debug") == "true") : ?>
 		<!-- bower:css -->
 		<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css" />
@@ -135,7 +135,8 @@
 						<span class="icon-bar"></span>
 					</button>
 			
-					<a class="navbar-brand hidden-sm" href="<?php echo site_url(); ?>">OSPOS</a>
+					<!-- <a class="navbar-brand hidden-sm" href="<?php echo site_url(); ?>">OSPOS</a> -->
+					<a class="navbar-brand hidden-sm" href="<?php echo site_url(); ?>"><img src="<?php echo base_url();?>/images/possim_navbar.png" width="100"></a>
 				</div>
 
 				<div class="navbar-collapse collapse">

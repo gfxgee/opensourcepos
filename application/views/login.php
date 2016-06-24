@@ -4,7 +4,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<base href="<?php echo base_url();?>" />
 	<title>Open Source Point Of Sale <?php echo $this->lang->line('login_login'); ?></title>
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
 	<!-- start css template tags -->
 	<link rel="stylesheet" type="text/css" href="dist/bootstrap.min.css?rel=9ed20b1ee8"/>
 	<link rel="stylesheet" type="text/css" href="css/login.css"/>
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-	<div id="logo" align="center"><img src="<?php echo base_url();?>/images/logo.png"></div>
+	<div id="logo" align="center"><img src="<?php echo base_url();?>/images/possim_logo_2.png" width="350px"></div>
 
 	<div id="login">
 		<?php echo form_open('login') ?>
@@ -38,7 +38,7 @@
 			</div>
 		<?php echo form_close(); ?>
 		
-		<h1>Open Source Point Of Sale <?php echo $this->config->item('application_version'); ?></h1>
+		<!-- <h1>Open Source Point Of Sale <?php echo $this->config->item('application_version'); ?></h1> -->
 	</div>
 </body>
 </html>
