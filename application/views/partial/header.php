@@ -71,18 +71,23 @@
 		<link rel="stylesheet" type="text/css" href="dist/bootstrap.min.css?rel=9ed20b1ee8"/>
 		<link rel="stylesheet" type="text/css" href="css/select2-bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="dist/jquery-ui.css"/>
-		<link rel="stylesheet" type="text/css" href="dist/opensourcepos.min.css?rel=725a0444ad"/>
+		<link rel="stylesheet" type="text/css" href="dist/opensourcepos.min.css?rel=f8daa2f957"/>
 		<!-- end mincss template tags -->
 		<!-- start minjs template tags -->
+<<<<<<< HEAD
 		<script type="text/javascript" src="dist/opensourcepos.min.js?rel=057f34d35e" language="javascript"></script>
 		<script type="text/javascript" src="js/select2.js" language="javascript"></script>
+=======
+		<script type="text/javascript" src="dist/opensourcepos.min.js?rel=8f5db8017e" language="javascript"></script>
+>>>>>>> upstream/master
 		<!-- end minjs template tags -->
 	<?php endif; ?>
 
+	<?php $this->load->view('partial/lang_lines'); ?>
+
 	<script type="text/javascript">
 		// live clock
-	
-		function clockTick() {  
+		var clockTick = function clockTick() {
 			setInterval('updateClock();', 1000);  
 		}
 
