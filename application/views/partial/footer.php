@@ -6,6 +6,9 @@
 			<a class="" href="<?php echo site_url(); ?>"><img src="<?php echo base_url();?>/images/possim_logo.png" width="150"></a>
 			<p style="font-size: 12px;">Point of Sale and Store Inventory System</p>
 			&copy; POSSIM <?php echo date('Y'); ?>
+			<a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet">
+Tweet</a>
 		</div>
 	</div>
 </body>

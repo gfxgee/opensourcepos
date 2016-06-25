@@ -5,6 +5,7 @@
 	<base href="<?php echo base_url();?>" />
 	<title><?php echo $this->config->item('company').' | '.(empty($controller_name) ? 'Home' : $controller_name); ?></title>
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+	<link rel="canonical"  href="https://dev.twitter.com/web/tweet-button">
 	<?php if ($this->input->cookie('debug') == "true" || $this->input->get("debug") == "true") : ?>
 		<!-- bower:css -->
 		<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css" />
