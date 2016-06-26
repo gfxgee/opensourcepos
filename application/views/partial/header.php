@@ -74,12 +74,7 @@
 		<link rel="stylesheet" type="text/css" href="dist/opensourcepos.min.css?rel=f8daa2f957"/>
 		<!-- end mincss template tags -->
 		<!-- start minjs template tags -->
-<<<<<<< HEAD
-		<script type="text/javascript" src="dist/opensourcepos.min.js?rel=057f34d35e" language="javascript"></script>
-		<script type="text/javascript" src="js/select2.js" language="javascript"></script>
-=======
 		<script type="text/javascript" src="dist/opensourcepos.min.js?rel=8f5db8017e" language="javascript"></script>
->>>>>>> upstream/master
 		<!-- end minjs template tags -->
 	<?php endif; ?>
 
