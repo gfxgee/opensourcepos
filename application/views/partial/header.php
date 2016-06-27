@@ -68,6 +68,7 @@
 		<link rel="stylesheet" media="print" href="css/print.css" type="text/css" />
 		<![endif]-->
 		<!-- start mincss template tags -->
+		<link rel="stylesheet" type="text/css" href="dist/bootstrap.min.css?rel=50ab19585f"/>
 		<link rel="stylesheet" type="text/css" href="dist/jquery-ui.css"/>
 		<link rel="stylesheet" type="text/css" href="dist/opensourcepos.min.css?rel=6565b523f9"/>
 		<!-- end mincss template tags -->
